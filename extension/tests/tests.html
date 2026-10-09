@@ -1,0 +1,19 @@
+<!doctype html>
+<!-- 純関数と extract.js の試験ページ(FR-20)。拡張の中で開くと試験が走り「PASS n / FAIL m」を出す。 -->
+<!-- 窓なしでは body の data-done と data-summary を読む。fixtures は iframe で開く。 -->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>SourceWatch の試験</title>
+<style>
+	body { font: 13px/1.5 system-ui, sans-serif; margin: 12px; }
+	.fail { color: #c0392b; }
+	iframe { width: 300px; height: 80px; }
+</style>
+</head>
+<body>
+<h1 id="summary">実行中…</h1>
+<ol id="list"></ol>
+<script type="module" src="tests.js"></script>
+</body>
+</html>

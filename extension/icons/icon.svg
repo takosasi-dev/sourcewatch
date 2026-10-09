@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+<!-- SourceWatch のツールバーのアイコンの元。ギザの縁のホログラムの封印シールと、真ん中の彩紋(ギョーシェ)。一覧に無いページでは Chrome が灰色にする。node tools/svg_to_png.mjs で icons/16・48・128.png にする -->
+<defs>
+<linearGradient id="foil" x1="0" y1="0" x2="1" y2="1">
+<stop offset="0" stop-color="#1f8f80"/>
+<stop offset="0.35" stop-color="#3a6fc4"/>
+<stop offset="0.65" stop-color="#c2407a"/>
+<stop offset="1" stop-color="#c99a2e"/>
+</linearGradient>
+</defs>
+<path d="M64.0 3.0L71.2 9.5L79.8 5.1L85.0 13.2L94.5 11.2L97.5 20.4L107.1 20.9L107.6 30.5L116.8 33.5L114.8 43.0L122.9 48.2L118.5 56.8L125.0 64.0L118.5 71.2L122.9 79.8L114.8 85.0L116.8 94.5L107.6 97.5L107.1 107.1L97.5 107.6L94.5 116.8L85.0 114.8L79.8 122.9L71.2 118.5L64.0 125.0L56.8 118.5L48.2 122.9L43.0 114.8L33.5 116.8L30.5 107.6L20.9 107.1L20.4 97.5L11.2 94.5L13.2 85.0L5.1 79.8L9.5 71.2L3.0 64.0L9.5 56.8L5.1 48.2L13.2 43.0L11.2 33.5L20.4 30.5L20.9 20.9L30.5 20.4L33.5 11.2L43.0 13.2L48.2 5.1L56.8 9.5Z" fill="url(#foil)"/>
+<circle cx="64" cy="64" r="42" fill="#f8f7f4"/>
+<g fill="none" stroke="#6e4f0c" stroke-width="3">
+<ellipse cx="64" cy="64" rx="33" ry="12"/>
+<ellipse cx="64" cy="64" rx="33" ry="12" transform="rotate(30 64 64)"/>
+<ellipse cx="64" cy="64" rx="33" ry="12" transform="rotate(60 64 64)"/>
+<ellipse cx="64" cy="64" rx="33" ry="12" transform="rotate(90 64 64)"/>
+<ellipse cx="64" cy="64" rx="33" ry="12" transform="rotate(120 64 64)"/>
+<ellipse cx="64" cy="64" rx="33" ry="12" transform="rotate(150 64 64)"/>
+</g>
+<circle cx="64" cy="64" r="7" fill="#1e1b19"/>
+</svg>

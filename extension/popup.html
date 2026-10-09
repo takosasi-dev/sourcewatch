@@ -1,0 +1,39 @@
+<!doctype html>
+<!-- popup(§9.5): 押したタブを引いているレポートと、前に見たときから変わったかを出す。 -->
+<!-- 処理は popup.js。文字は textContent だけで入れる(INV-4)。 -->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>SourceWatch</title>
+<style>
+	:root { color-scheme: light dark; --muted: #6b6b6b; --changed: #b03a2e; --same: #1e7e45; --first: #1f5f99; }
+	@media (prefers-color-scheme: dark) { :root { --muted: #a8a8a8; --changed: #ef8a7f; --same: #6fcf97; --first: #8ab8e6; } }
+	body { font: 13px/1.5 system-ui, "Yu Gothic UI", sans-serif; margin: 10px 12px; width: 440px; }
+	h1 { font-size: 13px; margin: 0 0 4px; }
+	table { border-collapse: collapse; width: 100%; margin-bottom: 8px; }
+	td { padding: 1px 6px 1px 0; vertical-align: top; }
+	td.path { word-break: break-all; }
+	td.date, td.count { white-space: nowrap; color: var(--muted); }
+	.verdict { font-weight: 600; }
+	.changed { color: var(--changed); }
+	.same { color: var(--same); }
+	.first { color: var(--first); }
+	.sub, .note { color: var(--muted); }
+	.warn { color: var(--changed); }
+	button { margin: 6px 0; }
+	details { margin-top: 6px; }
+	dl { margin: 4px 0; display: grid; grid-template-columns: max-content 1fr; gap: 2px 8px; }
+	dt { color: var(--muted); }
+	dd { margin: 0; word-break: break-all; }
+	.note { margin-top: 8px; font-size: 12px; }
+</style>
+</head>
+<body>
+<div id="reports"></div>
+<div id="verdict"></div>
+<div id="msg"></div>
+<details id="detail" hidden><summary>詳細</summary><dl id="detailBody"></dl></details>
+<p class="note">出典行は SourceStamp で</p>
+<script type="module" src="popup.js"></script>
+</body>
+</html>

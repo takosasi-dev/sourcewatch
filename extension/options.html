@@ -1,0 +1,54 @@
+<!doctype html>
+<!-- オプションページ: 一覧 JSON の読み込み(FR-6)・判定に使う指紋(FR-14)・数え(FR-16)・記録の書き出しと読み戻し(FR-19)。 -->
+<!-- 処理は options.js。文字は textContent と value だけで入れる(INV-4)。 -->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>SourceWatch の設定</title>
+<style>
+	:root { color-scheme: light dark; --muted: #6b6b6b; --warn: #b03a2e; --ok: #1e7e45; --line: #d0d0d0; }
+	@media (prefers-color-scheme: dark) { :root { --muted: #a8a8a8; --warn: #ef8a7f; --ok: #6fcf97; --line: #444; } }
+	body { font: 14px/1.6 system-ui, "Yu Gothic UI", sans-serif; max-width: 760px; margin: 24px auto; padding: 0 16px; }
+	h1 { font-size: 20px; }
+	h2 { font-size: 16px; border-bottom: 1px solid var(--line); padding-bottom: 2px; margin-top: 28px; }
+	.muted { color: var(--muted); }
+	.warn { color: var(--warn); }
+	.ok { color: var(--ok); }
+	dl { display: grid; grid-template-columns: max-content 1fr; gap: 2px 12px; }
+	dt { color: var(--muted); }
+	dd { margin: 0; word-break: break-all; }
+	table { border-collapse: collapse; }
+	td { padding: 1px 12px 1px 0; }
+	button, select { font: inherit; }
+	p { margin: 6px 0; }
+</style>
+</head>
+<body>
+<h1>SourceWatch</h1>
+<p class="muted">調査レポートで引いたページを開くと、ツールバーのアイコンに色が付く。押すと、前に見たときから中身が変わったかを出す。通信はしない。</p>
+
+<h2>一覧の読み込み</h2>
+<p>書き出しスクリプト(<code>sourcewatch_export.py</code>)が作った JSON を選ぶ。</p>
+<p><input type="file" id="listFile" accept=".json,application/json"></p>
+<div id="listMsg"></div>
+<dl id="listInfo"></dl>
+
+<h2>判定に使う指紋</h2>
+<p><select id="fp"></select> <span id="fpMsg" class="muted"></span></p>
+<p class="muted">N1 は空白をまとめた文字、N2 はそれに加えて数字の並びを 0 にした文字。主な部分は main → article → [role="main"] → body の最初に見つかった物。</p>
+
+<h2>数え</h2>
+<p class="muted">色の付いたページで popup を開いた回数など。この PC の中だけに残し、外へは出さない。</p>
+<dl id="stats"></dl>
+<table id="hosts"></table>
+
+<h2>記録</h2>
+<p class="warn">拡張を削除すると記録(基準の指紋と日付)も消える。消す前に「記録を書き出す」で保存しておく。</p>
+<dl id="recInfo"></dl>
+<p><button id="exportBtn">記録を書き出す</button> <button id="orphanBtn">一覧に無い記録を消す</button></p>
+<p>読み戻す: <input type="file" id="restoreFile" accept=".json,application/json"></p>
+<div id="recMsg"></div>
+
+<script type="module" src="options.js"></script>
+</body>
+</html>

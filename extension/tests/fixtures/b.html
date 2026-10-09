@@ -1,0 +1,23 @@
+<!doctype html>
+<!-- AC-15 の試験ページ。入力欄・contenteditable の中身(「秘」で始まる語)が指紋にも保存にも入らないことを見る(INV-3)。 -->
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>SourceWatch 試験ページ B</title>
+</head>
+<body>
+<article>
+<h1>試験ページ B</h1>
+<p>入力欄のあるページです。</p>
+<form>
+<input value="秘密1">
+<input type="password" value="秘密4">
+<textarea>秘密2</textarea>
+<select><option>秘密5</option></select>
+</form>
+<div contenteditable="true"><h2>秘密6</h2>秘密3</div>
+<h2>見出しの語<textarea>秘密8</textarea><span contenteditable="true">秘密9</span><script type="text/plain">"秘密10"</script><style>.x { color: red; } /* 秘密11 */</style></h2>
+<script type="application/ld+json">{"x": "秘密7"}</script>
+</article>
+</body>
+</html>

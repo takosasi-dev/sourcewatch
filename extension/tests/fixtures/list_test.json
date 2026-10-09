@@ -1,0 +1,14 @@
+{
+  "schema": "sourcewatch-list/1",
+  "generated_at": "2026-10-06T12:00:00+09:00",
+  "reports_dir": "レポート/調査レポート",
+  "reports": [
+    {"path": "レポート/調査レポート/試験/2026-08-17_試験_調査.md", "date": "2026-08-17", "date_source": "ファイル名"},
+    {"path": "レポート/調査レポート/試験/日付なし.md", "date": null, "date_source": null}
+  ],
+  "links": [
+    {"url": "http://localhost:8765/a.html", "report": 0, "line": 5, "text": "試験ページ A(localhost)"},
+    {"url": "http://localhost:8765/b.html", "report": 1, "line": 2, "text": "試験ページ B(localhost)"}
+  ],
+  "stats": {"files_scanned": 2, "files_with_links": 2, "links": 2, "urls": 2, "hosts": 1}
+}

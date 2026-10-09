@@ -1,0 +1,15 @@
+# 書き出しスクリプトの ruff・mypy・pytest の設定(AC-1)。パッケージにはしない。
+[tool.ruff]
+line-length = 140
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP"]
+
+[tool.mypy]
+python_version = "3.11"
+strict = true
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
